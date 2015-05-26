@@ -1,0 +1,76 @@
+<?php
+
+function customui_menu()
+{
+    $query = "select nid from node where type='menu'";
+    $records = db_query($query);
+    $items = array();
+    $page_arguments = array();
+    foreach ($records as $record) {
+        $node = node_load($record->nid);
+        if (!empty($node->field_page_arguments['und'])) {
+            $page_arguments = explode(",", $node->field_page_arguments['und'][0]['value']);
+        }
+        $items[$node->field_url['und'][0]['value']] = array(
+            'title' => $node->title,
+            'access callback' => TRUE,
+            'page callback' => $node->field_page_callback['und'][0]['value'],
+            'page arguments' => $page_arguments,
+            'file' => $node->field_file['und'][0]['value'],
+        );
+    }
+    return $items;
+}
+
+function customui_theme()
+{
+    return array(
+        'contact-us' => array(
+            'template' => 'contact-us',
+            'variables' => array('title' => '', 'contents' => array())
+        ),
+        'listing_node_form' => array(
+            'render element' => 'form',
+            'template' => 'listing-node-form',
+            'path' => 'sites/all/modules/custom/customui/views/forms'
+        ),
+        'category_node_form' => array(
+            'render element' => 'form',
+            'template' => 'category-node-form',
+            'path' => 'sites/all/modules/custom/customui/views/forms'
+        ),
+        'organisation_type_node_form' => array(
+            'render element' => 'form',
+            'template' => 'organisation-type-node-form',
+            'path' => 'sites/all/modules/custom/customui/views/forms'
+        ),
+        'listings' => array(
+            'template' => 'listings',
+            'variables' => array('title' => '', 'contents' => array()),
+            'path' => 'sites/all/modules/custom/customui/views/lists'
+        ),
+        'listing' => array(
+            'template' => 'listing',
+            'variables' => array('title' => '', 'contents' => array()),
+            'path' => 'sites/all/modules/custom/customui/views'
+        ),
+        'welcome' => array(
+            'template' => 'welcome',
+            'path' => 'sites/all/modules/custom/customui/views',
+            'variables' => array('title' => '', 'contents' => array())
+        ),
+    );
+}
+
+function customui_listing_node_form_submit(&$form, &$form_state)
+{
+    $form_state['redirect'] = "listings";
+}
+function customui_form_alter(&$form, &$form_state, $form_id){
+
+    switch($form_id){
+        case "listing_node_form":
+            $form['actions']['submit']['#submit'][] = 'customui_listing_node_form_submit';
+            break;
+    }
+}

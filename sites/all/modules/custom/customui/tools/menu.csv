@@ -1,0 +1,6 @@
+title|title callback|title arguments|description|page callback|page arguments|access callback|access arguments|file|file path|weight|menu_name|type|url
+Welcome||||router||||router.inc||||MENU_NORMAL_ITEM|welcome
+Listings list||||router||||router.inc||||MENU_NORMAL_ITEM|listings
+Listing||||router||||router.inc||||MENU_NORMAL_ITEM|listing
+Contact Us||||router||||router.inc||||MENU_NORMAL_ITEM|contact-us
+Search||||router||||router.inc||||MENU_NORMAL_ITEM|search

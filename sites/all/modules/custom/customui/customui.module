@@ -25,40 +25,32 @@ function customui_menu()
 function customui_theme()
 {
     return array(
-        'contact-us' => array(
-            'template' => 'contact-us',
-            'variables' => array('title' => '', 'contents' => array())
-        ),
-        'listing_node_form' => array(
+        'user_register_form' => array(
             'render element' => 'form',
-            'template' => 'listing-node-form',
+            'template' => 'user-register-form',
             'path' => 'sites/all/modules/custom/customui/views/forms'
         ),
-        'category_node_form' => array(
-            'render element' => 'form',
-            'template' => 'category-node-form',
-            'path' => 'sites/all/modules/custom/customui/views/forms'
-        ),
-        'organisation_type_node_form' => array(
-            'render element' => 'form',
-            'template' => 'organisation-type-node-form',
-            'path' => 'sites/all/modules/custom/customui/views/forms'
-        ),
-        'listings' => array(
-            'template' => 'listings',
+        'listing-list' => array(
+            'template' => 'listing-list',
             'variables' => array('title' => '', 'contents' => array()),
-            'path' => 'sites/all/modules/custom/customui/views/lists'
+            'path' => 'sites/all/modules/custom/customui/views/listing'
         ),
-        'listing' => array(
-            'template' => 'listing',
+        'listing-view' => array(
+            'template' => 'listing-view',
             'variables' => array('title' => '', 'contents' => array()),
-            'path' => 'sites/all/modules/custom/customui/views'
+            'path' => 'sites/all/modules/custom/customui/views/listing'
+        ),
+        'listing-owner' => array(
+            'template' => 'listing-owner',
+            'variables' => array('title' => '', 'contents' => array()),
+            'path' => 'sites/all/modules/custom/customui/views/listing'
         ),
         'welcome' => array(
             'template' => 'welcome',
             'path' => 'sites/all/modules/custom/customui/views',
             'variables' => array('title' => '', 'contents' => array())
         ),
+
     );
 }
 

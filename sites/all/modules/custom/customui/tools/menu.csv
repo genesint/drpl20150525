@@ -3,3 +3,9 @@ Welcome||||router||||router.inc||||MENU_NORMAL_ITEM|welcome
 Listing view||||router||||router.inc||||MENU_NORMAL_ITEM|listing-view
 View listing||||router||||router.inc||||MENU_NORMAL_ITEM|view-listing
 Listing owner||||router||||router.inc||||MENU_NORMAL_ITEM|listing-owner
+About||||router||||router.inc||||MENU_NORMAL_ITEM|about
+Location||||router||||router.inc||||MENU_NORMAL_ITEM|location
+Review||||router||||router.inc||||MENU_NORMAL_ITEM|review
+Gallery||||router||||router.inc||||MENU_NORMAL_ITEM|gallery
+Facility||||router||||router.inc||||MENU_NORMAL_ITEM|facility
+

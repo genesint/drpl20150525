@@ -1,12 +1,6 @@
 <?php
 global $base_url;
-$request_path = request_path();
-$editFlag = preg_match("/node\/[0-9]+/", $request_path);
-$screen = empty($_GET['screen']) ? "0" : $_GET['screen'];
-
 ?>
-
-
 <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-8"><h1><?php print $node->title; ?></h1></div>
@@ -26,12 +20,16 @@ $screen = empty($_GET['screen']) ? "0" : $_GET['screen'];
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
+                    <a class="navbar-brand" href="#">&nbsp;</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="<?php echo $base_url;?>/listing?nid=<?php echo $node->nid;?>&iframe=1&content=about" target="listing-content">About</a></li>
-                        <li><a href="<?php echo $base_url;?>/listing?nid=<?php echo $node->nid;?>&iframe=1&content=location"  target="listing-content">Location</a></li>
+                        <li class="active"><a href="<?php echo $base_url;?>/about?nid=<?php echo $node->nid;?>&iframe=1" target="listing-content">About</a></li>
+                        <li><a href="<?php echo $base_url;?>/gallery?nid=<?php echo $node->nid;?>&iframe=1"  target="listing-content">Gallery</a></li>
+                        <li><a href="<?php echo $base_url;?>/location?nid=<?php echo $node->nid;?>&iframe=1"  target="listing-content">Location</a></li>
+                        <li><a href="<?php echo $base_url;?>/facility?nid=<?php echo $node->nid;?>&iframe=1"  target="listing-content">Facilities</a></li>
+                        <li><a href="<?php echo $base_url;?>/review?nid=<?php echo $node->nid;?>&iframe=1"  target="listing-content">Reviews</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
@@ -42,7 +40,7 @@ $screen = empty($_GET['screen']) ? "0" : $_GET['screen'];
 <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-8">
-        <iframe class="listing-content" src="<?php echo $base_url;?>/listing?nid=<?php echo $node->nid;?>&iframe=1&content=about" name="listing-content"></iframe>
+        <iframe class="listing-content" src="<?php echo $base_url;?>/about?nid=<?php echo $node->nid;?>&iframe=1" name="listing-content"></iframe>
     </div>
     <div class="col-md-3"></div>
 </div>

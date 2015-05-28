@@ -19,9 +19,29 @@ function router()
                 '#markup' => theme('view-listing', array()),
             );
             break;
-        case 'profile':
+        case 'about':
             $page = array(
-                '#markup' => theme('profile', array()),
+                '#markup' => theme('about', array()),
+            );
+            break;
+        case 'location':
+            $page = array(
+                '#markup' => theme('location', array()),
+            );
+            break;
+        case 'review':
+            $page = array(
+                '#markup' => theme('review', array()),
+            );
+            break;
+        case 'facility':
+            $page = array(
+                '#markup' => theme('facility', array()),
+            );
+            break;
+        case 'gallery':
+            $page = array(
+                '#markup' => theme('gallery', array()),
             );
             break;
         default:

@@ -45,8 +45,28 @@ function customui_theme()
             'variables' => array('title' => '', 'contents' => array()),
             'path' => 'sites/all/modules/custom/customui/views/listing'
         ),
-        'profile' => array(
-            'template' => 'profile',
+        'about' => array(
+            'template' => 'about',
+            'variables' => array('title' => '', 'contents' => array()),
+            'path' => 'sites/all/modules/custom/customui/views'
+        ),
+        'review' => array(
+            'template' => 'review',
+            'variables' => array('title' => '', 'contents' => array()),
+            'path' => 'sites/all/modules/custom/customui/views'
+        ),
+        'facility' => array(
+            'template' => 'facility',
+            'variables' => array('title' => '', 'contents' => array()),
+            'path' => 'sites/all/modules/custom/customui/views'
+        ),
+        'gallery' => array(
+            'template' => 'gallery',
+            'variables' => array('title' => '', 'contents' => array()),
+            'path' => 'sites/all/modules/custom/customui/views'
+        ),
+        'location' => array(
+            'template' => 'location',
             'variables' => array('title' => '', 'contents' => array()),
             'path' => 'sites/all/modules/custom/customui/views'
         ),

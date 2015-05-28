@@ -1,7 +1,7 @@
 <?php
-global $user;
 module_load_include('inc', 'node', 'node.pages');
 function addnode($line){
+    global $user;
 	$line= str_replace ( "\n" , "" , $line );
 	$data=explode ( "|" , $line , 15);
 	$node = (object) array(

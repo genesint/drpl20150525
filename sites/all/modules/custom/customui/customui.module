@@ -30,9 +30,9 @@ function customui_theme()
             'template' => 'user-register-form',
             'path' => 'sites/all/modules/custom/customui/views/forms'
         ),
-        'listing-list' => array(
-            'template' => 'listing-list',
-            'variables' => array('title' => '', 'contents' => array()),
+        'listing_node_form' => array(
+            'render element' => 'form',
+            'template' => 'listing-node-form',
             'path' => 'sites/all/modules/custom/customui/views/listing'
         ),
         'listing-view' => array(
@@ -40,10 +40,15 @@ function customui_theme()
             'variables' => array('title' => '', 'contents' => array()),
             'path' => 'sites/all/modules/custom/customui/views/listing'
         ),
-        'listing-owner' => array(
-            'template' => 'listing-owner',
+        'view-listing' => array(
+            'template' => 'view-listing',
             'variables' => array('title' => '', 'contents' => array()),
             'path' => 'sites/all/modules/custom/customui/views/listing'
+        ),
+        'profile' => array(
+            'template' => 'profile',
+            'variables' => array('title' => '', 'contents' => array()),
+            'path' => 'sites/all/modules/custom/customui/views'
         ),
         'welcome' => array(
             'template' => 'welcome',
@@ -56,7 +61,7 @@ function customui_theme()
 
 function customui_listing_node_form_submit(&$form, &$form_state)
 {
-    $form_state['redirect'] = "listings";
+    $form_state['redirect'] = "listing-view";
 }
 function customui_form_alter(&$form, &$form_state, $form_id){
 

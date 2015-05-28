@@ -1,5 +1,5 @@
 title|title callback|title arguments|description|page callback|page arguments|access callback|access arguments|file|file path|weight|menu_name|type|url
 Welcome||||router||||router.inc||||MENU_NORMAL_ITEM|welcome
-Listings list||||router||||router.inc||||MENU_NORMAL_ITEM|listing-list
 Listing view||||router||||router.inc||||MENU_NORMAL_ITEM|listing-view
+View listing||||router||||router.inc||||MENU_NORMAL_ITEM|view-listing
 Listing owner||||router||||router.inc||||MENU_NORMAL_ITEM|listing-owner

@@ -9,19 +9,19 @@ function router()
                 '#markup' => theme('welcome', array()),
             );
             break;
-        case 'listing-list':
-            $page = array(
-                '#markup' => theme('listing-list', array()),
-            );
-            break;
         case 'listing-view':
             $page = array(
                 '#markup' => theme('listing-view', array()),
             );
             break;
-        case 'listing-owner':
+        case 'view-listing':
             $page = array(
-                '#markup' => theme('listing-owner', array()),
+                '#markup' => theme('view-listing', array()),
+            );
+            break;
+        case 'profile':
+            $page = array(
+                '#markup' => theme('profile', array()),
             );
             break;
         default:

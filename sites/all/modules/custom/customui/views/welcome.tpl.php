@@ -1,7 +1,11 @@
-<div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-4"></div>
-    <div class="col-md-4"></div>
-    <div class="col-md-2"></div>
-</div>
+<?php
+if (!user_is_logged_in()) {
+    ?>
+    <ul class="nav nav-pills">
+        <li class="active"><a href="register?role=4">Sign up</a></li>
+    </ul>
+
+<?php
+}
+?>
 

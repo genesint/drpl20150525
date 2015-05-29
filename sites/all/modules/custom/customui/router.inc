@@ -9,6 +9,11 @@ function router()
                 '#markup' => theme('welcome', array()),
             );
             break;
+        case '':
+            $page = array(
+                '#markup' => theme('welcome', array()),
+            );
+            break;
         case 'listing-view':
             $page = array(
                 '#markup' => theme('listing-view', array()),
@@ -42,6 +47,11 @@ function router()
         case 'gallery':
             $page = array(
                 '#markup' => theme('gallery', array()),
+            );
+            break;
+        case 'register':
+            $page = array(
+                '#markup' => theme('register', array()),
             );
             break;
         default:

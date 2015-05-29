@@ -85,6 +85,11 @@ function customui_theme()
             'path' => 'sites/all/modules/custom/customui/views',
             'variables' => array('title' => '', 'contents' => array())
         ),
+        'register' => array(
+            'template' => 'register',
+            'path' => 'sites/all/modules/custom/customui/views',
+            'variables' => array('title' => '', 'contents' => array())
+        ),
 
     );
 }
@@ -117,6 +122,7 @@ function customui_photo_node_form_submit(&$form, &$form_state)
             )
         ));
 }
+
 function customui_form_alter(&$form, &$form_state, $form_id){
 
     switch($form_id){

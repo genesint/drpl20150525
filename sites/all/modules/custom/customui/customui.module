@@ -35,6 +35,16 @@ function customui_theme()
             'template' => 'listing-node-form',
             'path' => 'sites/all/modules/custom/customui/views/listing'
         ),
+        'facility_node_form' => array(
+            'render element' => 'form',
+            'template' => 'facility-node-form',
+            'path' => 'sites/all/modules/custom/customui/views/forms'
+        ),
+        'photo_node_form' => array(
+            'render element' => 'form',
+            'template' => 'photo-node-form',
+            'path' => 'sites/all/modules/custom/customui/views/forms'
+        ),
         'listing-view' => array(
             'template' => 'listing-view',
             'variables' => array('title' => '', 'contents' => array()),
@@ -83,11 +93,41 @@ function customui_listing_node_form_submit(&$form, &$form_state)
 {
     $form_state['redirect'] = "listing-view";
 }
+function customui_facility_node_form_submit(&$form, &$form_state)
+{
+
+    $nid = empty($_GET['nid']) ? "" : $_GET['nid'];
+    $form_state['redirect'] = array("facility",
+        array(
+            'query'=>array(
+                'iframe'=>'1',
+                'nid'=>$nid
+            )
+        ));
+}
+function customui_photo_node_form_submit(&$form, &$form_state)
+{
+
+    $nid = empty($_GET['nid']) ? "" : $_GET['nid'];
+    $form_state['redirect'] = array("gallery",
+        array(
+            'query'=>array(
+                'iframe'=>'1',
+                'nid'=>$nid
+            )
+        ));
+}
 function customui_form_alter(&$form, &$form_state, $form_id){
 
     switch($form_id){
         case "listing_node_form":
             $form['actions']['submit']['#submit'][] = 'customui_listing_node_form_submit';
+            break;
+        case "facility_node_form":
+            $form['actions']['submit']['#submit'][] = 'customui_facility_node_form_submit';
+            break;
+        case "photo_node_form":
+            $form['actions']['submit']['#submit'][] = 'customui_photo_node_form_submit';
             break;
     }
 }

@@ -144,23 +144,32 @@ function customui_photo_node_form_submit(&$form, &$form_state)
             )
         ));
 }
+function customui_photo_node_form_validate(&$form, &$form_state)
+{
+    $nid = empty($_GET['nid']) ? "" : $_GET['nid'];
+    $form_state['values']['field_node']['und']['0']['target_id']=$nid;
+}
 
+function customui_facility_node_form_validate(&$form, &$form_state)
+{
+    $nid = empty($_GET['nid']) ? "" : $_GET['nid'];
+    $form_state['values']['field_listing']['und']['0']['target_id']=$nid;
+}
 function customui_form_alter(&$form, &$form_state, $form_id){
 
     switch($form_id){
         case "listing_node_form":
             $form['actions']['submit']['#submit'][] = 'customui_listing_node_form_submit';
-            $request=request_path();
-            if($request=='about'){
-
-                $form["body"]['#access'] = 1;
-            }
             break;
         case "facility_node_form":
             $form['actions']['submit']['#submit'][] = 'customui_facility_node_form_submit';
+            $form['#validate'][] = 'customui_facility_node_form_validate';
+            $form["field_listing"]['#access'] = 0;
             break;
         case "photo_node_form":
             $form['actions']['submit']['#submit'][] = 'customui_photo_node_form_submit';
+            $form['#validate'][] = 'customui_photo_node_form_validate';
+            $form["field_node"]['#access'] = 0;
             break;
     }
 }

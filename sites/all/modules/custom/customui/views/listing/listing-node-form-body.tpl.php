@@ -12,10 +12,5 @@ $form["body"]['#access'] = 1;
 $form['actions']["preview"]['#access'] = 0;
 print drupal_render($form);
 ?>
-<div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-4"></div>
-    <div class="col-md-4"></div>
-    <div class="col-md-2"></div>
-</div>
+
 

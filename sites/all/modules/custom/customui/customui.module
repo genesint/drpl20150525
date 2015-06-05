@@ -106,7 +106,19 @@ function customui_theme()
 
 function customui_listing_node_form_submit(&$form, &$form_state)
 {
-    $form_state['redirect'] = "listing-view-list";
+    $nid=empty($_GET['nid']) ? "" : $_GET['nid'];
+    if($nid==""){
+        $form_state['redirect'] = "listing-view-list";
+    }
+    else{
+        $form_state['redirect'] = array("listing-view-item-body",
+            array(
+                'query'=>array(
+                    'iframe'=>'1',
+                    'nid'=>$nid
+                )
+            ));
+    }
 }
 function customui_facility_node_form_submit(&$form, &$form_state)
 {

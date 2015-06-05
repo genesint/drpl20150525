@@ -1,19 +1,17 @@
 <?php
 global $user;
-$nid = empty($_GET['nid']) ? "" : $_GET['nid'];
-$node= node_load($nid);
-
+$cid=$user->uid;
 ?>
-
 <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8">
         <?php
+        $filter=array();
         $args=array();
-        $view = views_get_view('review_view');
+        $view = views_get_view('listing');
         $view->set_display('block');
-        if($nid!=""){
-            $args = array($nid);
+        if($cid!=""){
+            $args = array($cid);
             $view->set_arguments($args);
         }
         $view->pre_execute();
@@ -23,4 +21,3 @@ $node= node_load($nid);
     </div>
     <div class="col-md-2"></div>
 </div>
-

@@ -30,11 +30,6 @@ function customui_theme()
             'template' => 'user-register-form',
             'path' => 'sites/all/modules/custom/customui/views/forms'
         ),
-        'listing_node_form' => array(
-            'render element' => 'form',
-            'template' => 'listing-node-form',
-            'path' => 'sites/all/modules/custom/customui/views/listing'
-        ),
         'facility_node_form' => array(
             'render element' => 'form',
             'template' => 'facility-node-form',
@@ -45,20 +40,35 @@ function customui_theme()
             'template' => 'photo-node-form',
             'path' => 'sites/all/modules/custom/customui/views/forms'
         ),
-        'listing-view' => array(
-            'template' => 'listing-view',
+        'listing-view-list' => array(
+            'template' => 'listing-view-list',
             'variables' => array('title' => '', 'contents' => array()),
             'path' => 'sites/all/modules/custom/customui/views/listing'
         ),
-        'view-listing' => array(
-            'template' => 'view-listing',
+        'listing-view-item' => array(
+            'template' => 'listing-view-item',
+            'variables' => array('title' => '', 'contents' => array()),
+            'path' => 'sites/all/modules/custom/customui/views/listing'
+        ),
+        'listing-view-item-body' => array(
+            'template' => 'listing-view-item-body',
+            'variables' => array('title' => '', 'contents' => array()),
+            'path' => 'sites/all/modules/custom/customui/views/listing'
+        ),
+        'listing-node-form-basic-info' => array(
+            'template' => 'listing-node-form-basic-info',
+            'variables' => array('title' => '', 'contents' => array()),
+            'path' => 'sites/all/modules/custom/customui/views/listing'
+        ),
+        'listing-node-form-body' => array(
+            'template' => 'listing-node-form-body',
             'variables' => array('title' => '', 'contents' => array()),
             'path' => 'sites/all/modules/custom/customui/views/listing'
         ),
         'about' => array(
             'template' => 'about',
             'variables' => array('title' => '', 'contents' => array()),
-            'path' => 'sites/all/modules/custom/customui/views'
+            'path' => 'sites/all/modules/custom/customui/views/listing'
         ),
         'review' => array(
             'template' => 'review',
@@ -128,6 +138,11 @@ function customui_form_alter(&$form, &$form_state, $form_id){
     switch($form_id){
         case "listing_node_form":
             $form['actions']['submit']['#submit'][] = 'customui_listing_node_form_submit';
+            $request=request_path();
+            if($request=='about'){
+
+                $form["body"]['#access'] = 1;
+            }
             break;
         case "facility_node_form":
             $form['actions']['submit']['#submit'][] = 'customui_facility_node_form_submit';

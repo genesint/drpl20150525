@@ -1,5 +1,13 @@
 <?php
-
+module_load_include('inc', 'node', 'node.pages');
+global $user;
+$node = (object) array(
+    'uid' => $user->uid,
+    'name' => (isset($user->name) ? $user->name : ''),
+    'type' => 'listing',
+    'language' => LANGUAGE_NONE,
+);
+$form = drupal_get_form('listing' . '_node_form', $node);
 #$form["title"]['#access'] = 0;
 #$form["field_address"]['#access'] = 0;
 #$form["field_listing_location"]['#access'] = 0;

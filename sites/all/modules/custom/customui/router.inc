@@ -14,19 +14,44 @@ function router()
                 '#markup' => theme('welcome', array()),
             );
             break;
-        case 'listing-view':
+        case 'listing-view-list':
             $page = array(
-                '#markup' => theme('listing-view', array()),
+                '#markup' => theme('listing-view-list', array()),
             );
             break;
-        case 'view-listing':
+        case 'listing-view-item':
             $page = array(
-                '#markup' => theme('view-listing', array()),
+                '#markup' => theme('listing-view-item', array()),
+            );
+            break;
+        case 'listing-view-item-body':
+            $page = array(
+                '#markup' => theme('listing-view-item-body', array()),
+            );
+            break;
+        case 'listing-node-form-basic-info':
+            $page = array(
+                '#markup' => theme('listing-node-form-basic-info', array()),
+            );
+            break;
+        case 'listing-node-form-body':
+            $page = array(
+                '#markup' => theme('listing-node-form-body', array()),
             );
             break;
         case 'about':
             $page = array(
                 '#markup' => theme('about', array()),
+            );
+            break;
+        case 'about-info':
+            $page = array(
+                '#markup' => theme('about-info', array()),
+            );
+            break;
+        case 'basic-info':
+            $page = array(
+                '#markup' => theme('basic-info', array()),
             );
             break;
         case 'location':

@@ -18,8 +18,13 @@ if($user->uid==$node->uid){
     <div class="col-md-2"></div>
     <div class="col-md-8">
         <?php
+        $args=array();
         $view = views_get_view('photo_view');
         $view->set_display('block');
+        if($nid!=""){
+            $args = array($nid);
+            $view->set_arguments($args);
+        }
         $view->pre_execute();
         $view->execute();
         print $view->preview();

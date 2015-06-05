@@ -106,7 +106,7 @@ function customui_theme()
 
 function customui_listing_node_form_submit(&$form, &$form_state)
 {
-    $form_state['redirect'] = "listing-view";
+    $form_state['redirect'] = "listing-view-list";
 }
 function customui_facility_node_form_submit(&$form, &$form_state)
 {

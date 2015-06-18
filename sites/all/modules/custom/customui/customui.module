@@ -225,5 +225,4 @@ function customui_page_alter()
 {
     global $user;
     $user_id = $user->uid;
-    drupal_add_css('sites/all/themes/Sarai/css/cover.css');
 }

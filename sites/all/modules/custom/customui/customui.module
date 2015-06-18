@@ -90,15 +90,25 @@ function customui_theme()
             'variables' => array('title' => '', 'contents' => array()),
             'path' => 'sites/all/modules/custom/customui/views'
         ),
-        'photo-gallery' => array(
-            'template' => 'photo-gallery',
+        'visitor-photo-gallery' => array(
+            'template' => 'visitor-photo-gallery',
             'variables' => array('title' => '', 'contents' => array()),
-            'path' => 'sites/all/modules/custom/customui/views'
+            'path' => 'sites/all/modules/custom/customui/views/visitor'
         ),
-        'video-gallery' => array(
-            'template' => 'video-gallery',
+        'visitor-video-gallery' => array(
+            'template' => 'visitor-video-gallery',
             'variables' => array('title' => '', 'contents' => array()),
-            'path' => 'sites/all/modules/custom/customui/views'
+            'path' => 'sites/all/modules/custom/customui/views/visitor'
+        ),
+        'listing-photo-gallery' => array(
+            'template' => 'listing-photo-gallery',
+            'variables' => array('title' => '', 'contents' => array()),
+            'path' => 'sites/all/modules/custom/customui/views/listing'
+        ),
+        'listing-video-gallery' => array(
+            'template' => 'visitor-video-gallery',
+            'variables' => array('title' => '', 'contents' => array()),
+            'path' => 'sites/all/modules/custom/customui/views/listing'
         ),
         'welcome' => array(
             'template' => 'welcome',
@@ -209,4 +219,11 @@ function customui_form_alter(&$form, &$form_state, $form_id)
             $form["field_node"]['#access'] = 0;
             break;
     }
+}
+
+function customui_page_alter()
+{
+    global $user;
+    $user_id = $user->uid;
+    drupal_add_css('sites/all/themes/Sarai/css/cover.css');
 }

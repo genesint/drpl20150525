@@ -10,10 +10,10 @@ function router()
             );
             break;
         case '':
-            $page = array(
-                '#markup' => theme('welcome', array()),
-            );
-            break;
+        $page = array(
+            '#markup' => theme('welcome', array()),
+        );
+        break;
         case 'basic-listing-node-form':
             $page = array(
                 '#markup' => theme('basic-listing-node-form', array()),
@@ -59,9 +59,14 @@ function router()
                 '#markup' => theme('facility', array()),
             );
             break;
-        case 'photo-gallery':
+        case 'listing-photo-gallery':
             $page = array(
-                '#markup' => theme('photo-gallery', array()),
+                '#markup' => theme('listing-photo-gallery', array()),
+            );
+            break;
+        case 'visitor-photo-gallery':
+            $page = array(
+                '#markup' => theme('visitor-photo-gallery', array()),
             );
             break;
         case 'visitor-account':
@@ -69,9 +74,34 @@ function router()
                 '#markup' => theme('visitor-account', array()),
             );
             break;
-        case 'video-gallery':
+        case 'messages':
             $page = array(
-                '#markup' => theme('video-gallery', array()),
+                '#markup' => theme('messages', array()),
+            );
+            break;
+        case 'profile':
+            $page = array(
+                '#markup' => theme('profile', array()),
+            );
+            break;
+        case 'friends':
+            $page = array(
+                '#markup' => theme('friends', array()),
+            );
+            break;
+        case 'places':
+            $page = array(
+                '#markup' => theme('places', array()),
+            );
+            break;
+        case 'listing-video-gallery':
+            $page = array(
+                '#markup' => theme('listing-video-gallery', array()),
+            );
+            break;
+        case 'visitor-video-gallery':
+            $page = array(
+                '#markup' => theme('visitor-video-gallery', array()),
             );
             break;
         case 'register':

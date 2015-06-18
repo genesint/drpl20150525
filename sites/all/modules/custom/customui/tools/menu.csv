@@ -6,11 +6,17 @@ Owner Listing list||||router||||router.inc||||MENU_NORMAL_ITEM|owner-listing-lis
 basic listing node form||||router||||router.inc||||MENU_NORMAL_ITEM|basic-listing-node-form
 about listing node  form||||router||||router.inc||||MENU_NORMAL_ITEM|about-listing-node-form
 Review||||router||||router.inc||||MENU_NORMAL_ITEM|review
-Photo Gallery||||router||||router.inc||||MENU_NORMAL_ITEM|photo-gallery
-Video Gallery||||router||||router.inc||||MENU_NORMAL_ITEM|video-gallery
+Listing Photo Gallery||||router||||router.inc||||MENU_NORMAL_ITEM|listing-photo-gallery
+Listing Video Gallery||||router||||router.inc||||MENU_NORMAL_ITEM|listing-video-gallery
+Visitor Photo Gallery||||router||||router.inc||||MENU_NORMAL_ITEM|visitor-photo-gallery
+Visitor Video Gallery||||router||||router.inc||||MENU_NORMAL_ITEM|visitor-video-gallery
 My account||||router||||router.inc||||MENU_NORMAL_ITEM|visitor-account
 Facility||||router||||router.inc||||MENU_NORMAL_ITEM|facility
 Register||||router||||router.inc||||MENU_NORMAL_ITEM|register
 basic listing view item||||router||||router.inc||||MENU_NORMAL_ITEM|basic-listing-view-item
 about listing view item||||router||||router.inc||||MENU_NORMAL_ITEM|about-listing-view-item
 location listing view item||||router||||router.inc||||MENU_NORMAL_ITEM|location-listing-view-item
+Messages||||router||||router.inc||||MENU_NORMAL_ITEM|messages
+Profile||||router||||router.inc||||MENU_NORMAL_ITEM|profile
+Places||||router||||router.inc||||MENU_NORMAL_ITEM|places
+My friends||||router||||router.inc||||MENU_NORMAL_ITEM|friends

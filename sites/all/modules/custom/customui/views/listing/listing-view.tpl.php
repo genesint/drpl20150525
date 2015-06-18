@@ -82,10 +82,10 @@ if ($user->uid == $node->uid) {
 		  href="<?php echo $base_url; ?>/facility?nid=<?php echo $node->nid; ?>&iframe=1"
 		  target="listing-view-item-iframe">Facilities</a></li>
         <li role="presentation"><a
-                href="<?php echo $base_url; ?>/photo-gallery?nid=<?php echo $node->nid; ?>&iframe=1"
+                href="<?php echo $base_url; ?>/listing-photo-gallery?nid=<?php echo $node->nid; ?>&iframe=1"
                 target="listing-view-item-iframe">Photo gallery</a></li>
         <li role="presentation"><a
-                href="<?php echo $base_url; ?>/video-gallery?nid=<?php echo $node->nid; ?>&iframe=1"
+                href="<?php echo $base_url; ?>/listing-video-gallery?nid=<?php echo $node->nid; ?>&iframe=1"
                 target="listing-view-item-iframe">Video gallery</a></li>
         <li role="presentation"><a
                 href="<?php echo $base_url; ?>/review?nid=<?php echo $node->nid; ?>&iframe=1"
@@ -97,7 +97,7 @@ if ($user->uid == $node->uid) {
 <div class="row">
   <div class="col-md-1"></div>
   <div class="col-md-10">
-	<iframe class="listing-view-item-iframe"
+	<iframe class="listing-view-item-iframe" scrolling="no"
 			src="<?php echo $base_url; ?>/basic-listing-view-item?nid=<?php echo $node->nid; ?>&iframe=1"
 			name="listing-view-item-iframe"></iframe>
   </div>

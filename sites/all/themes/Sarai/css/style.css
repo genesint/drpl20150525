@@ -6806,7 +6806,11 @@ h1.page-header {
 }
 .listing-view-item-iframe {
   width: 100%;
-  border-width: 0px;
+  border-width: 1px;
+  border-color: #a0a0a0;
   min-height: 800px;
   background-color: #c0c0c0;
+}
+.jumbotron {
+  min-height: 400px;
 }

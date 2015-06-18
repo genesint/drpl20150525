@@ -1,14 +1,16 @@
 title|title callback|title arguments|description|page callback|page arguments|access callback|access arguments|file|file path|weight|menu_name|type|url
 Welcome||||router||||router.inc||||MENU_NORMAL_ITEM|welcome
-Listing view list||||router||||router.inc||||MENU_NORMAL_ITEM|listing-view-list
-Listing view item||||router||||router.inc||||MENU_NORMAL_ITEM|listing-view-item
-Listing view item body||||router||||router.inc||||MENU_NORMAL_ITEM|listing-view-item-body
-Listing owner||||router||||router.inc||||MENU_NORMAL_ITEM|listing-owner
-About||||router||||router.inc||||MENU_NORMAL_ITEM|about
-Listing basic information||||router||||router.inc||||MENU_NORMAL_ITEM|listing-node-form-basic-info
-Listing body||||router||||router.inc||||MENU_NORMAL_ITEM|listing-node-form-body
-Location||||router||||router.inc||||MENU_NORMAL_ITEM|location
+Listing list||||router||||router.inc||||MENU_NORMAL_ITEM|listing-list
+Listing view||||router||||router.inc||||MENU_NORMAL_ITEM|listing-view
+Owner Listing list||||router||||router.inc||||MENU_NORMAL_ITEM|owner-listing-list
+basic listing node form||||router||||router.inc||||MENU_NORMAL_ITEM|basic-listing-node-form
+about listing node  form||||router||||router.inc||||MENU_NORMAL_ITEM|about-listing-node-form
 Review||||router||||router.inc||||MENU_NORMAL_ITEM|review
-Gallery||||router||||router.inc||||MENU_NORMAL_ITEM|gallery
+Photo Gallery||||router||||router.inc||||MENU_NORMAL_ITEM|photo-gallery
+Video Gallery||||router||||router.inc||||MENU_NORMAL_ITEM|video-gallery
+My account||||router||||router.inc||||MENU_NORMAL_ITEM|visitor-account
 Facility||||router||||router.inc||||MENU_NORMAL_ITEM|facility
 Register||||router||||router.inc||||MENU_NORMAL_ITEM|register
+basic listing view item||||router||||router.inc||||MENU_NORMAL_ITEM|basic-listing-view-item
+about listing view item||||router||||router.inc||||MENU_NORMAL_ITEM|about-listing-view-item
+location listing view item||||router||||router.inc||||MENU_NORMAL_ITEM|location-listing-view-item

@@ -40,33 +40,43 @@ function customui_theme()
             'template' => 'photo-node-form',
             'path' => 'sites/all/modules/custom/customui/views/forms'
         ),
-        'listing-view-list' => array(
-            'template' => 'listing-view-list',
+        'basic-listing-node-form' => array(
+            'template' => 'basic-listing-node-form',
+            'variables' => array('title' => '', 'contents' => array()),
+            'path' => 'sites/all/modules/custom/customui/views/forms/listing'
+        ),
+        'about-listing-node-form' => array(
+            'template' => 'about-listing-node-form',
+            'variables' => array('title' => '', 'contents' => array()),
+            'path' => 'sites/all/modules/custom/customui/views/forms/listing'
+        ),
+        'about-listing-view-item' => array(
+            'template' => 'about-listing-view-item',
             'variables' => array('title' => '', 'contents' => array()),
             'path' => 'sites/all/modules/custom/customui/views/listing'
         ),
-        'listing-view-item' => array(
-            'template' => 'listing-view-item',
+        'basic-listing-view-item' => array(
+            'template' => 'basic-listing-view-item',
             'variables' => array('title' => '', 'contents' => array()),
             'path' => 'sites/all/modules/custom/customui/views/listing'
         ),
-        'listing-view-item-body' => array(
-            'template' => 'listing-view-item-body',
+        'location-listing-view-item' => array(
+            'template' => 'location-listing-view-item',
             'variables' => array('title' => '', 'contents' => array()),
             'path' => 'sites/all/modules/custom/customui/views/listing'
         ),
-        'listing-node-form-basic-info' => array(
-            'template' => 'listing-node-form-basic-info',
+        'listing-view' => array(
+            'template' => 'listing-view',
             'variables' => array('title' => '', 'contents' => array()),
             'path' => 'sites/all/modules/custom/customui/views/listing'
         ),
-        'listing-node-form-body' => array(
-            'template' => 'listing-node-form-body',
+        'owner-listing-list' => array(
+            'template' => 'owner-listing-list',
             'variables' => array('title' => '', 'contents' => array()),
             'path' => 'sites/all/modules/custom/customui/views/listing'
         ),
-        'about' => array(
-            'template' => 'about',
+        'listing-list' => array(
+            'template' => 'listing-list',
             'variables' => array('title' => '', 'contents' => array()),
             'path' => 'sites/all/modules/custom/customui/views/listing'
         ),
@@ -80,13 +90,13 @@ function customui_theme()
             'variables' => array('title' => '', 'contents' => array()),
             'path' => 'sites/all/modules/custom/customui/views'
         ),
-        'gallery' => array(
-            'template' => 'gallery',
+        'photo-gallery' => array(
+            'template' => 'photo-gallery',
             'variables' => array('title' => '', 'contents' => array()),
             'path' => 'sites/all/modules/custom/customui/views'
         ),
-        'location' => array(
-            'template' => 'location',
+        'video-gallery' => array(
+            'template' => 'video-gallery',
             'variables' => array('title' => '', 'contents' => array()),
             'path' => 'sites/all/modules/custom/customui/views'
         ),
@@ -100,64 +110,91 @@ function customui_theme()
             'path' => 'sites/all/modules/custom/customui/views',
             'variables' => array('title' => '', 'contents' => array())
         ),
+        'visitor-account' => array(
+            'template' => 'visitor-account',
+            'path' => 'sites/all/modules/custom/customui/views/visitor',
+            'variables' => array('title' => '', 'contents' => array())
+        ),
 
     );
 }
 
 function customui_listing_node_form_submit(&$form, &$form_state)
 {
-    $nid=empty($_GET['nid']) ? "" : $_GET['nid'];
-    if($nid==""){
-        $form_state['redirect'] = "listing-view-list";
-    }
-    else{
-        $form_state['redirect'] = array("listing-view-item-body",
-            array(
-                'query'=>array(
-                    'iframe'=>'1',
-                    'nid'=>$nid
-                )
-            ));
+    $request_path = request_path();
+    $nid = empty($_GET['nid']) ? "" : $_GET['nid'];
+    switch ($request_path) {
+        case "basic-listing-node-form":
+            if ($nid != "") {
+                $form_state['redirect'] = array("basic-listing-view-item", array(
+                    'query' => array(
+                        "nid" => $nid,
+                        'iframe' => '1',
+                    ),
+                ));
+            } else {
+                $form_state['redirect'] = "owner-listing-list";
+            }
+            break;
+        case "about-listing-node-form":
+            if ($nid != "") {
+                $form_state['redirect'] = array("about-listing-view-item", array(
+                    'query' => array(
+                        "nid" => $nid,
+                        'iframe' => '1',
+                    ),
+                ));
+            } else {
+                $form_state['redirect'] = "owner-listing-list";
+            }
+            break;
+        default:
+            $form_state['redirect'] = "owner-listing-list";
     }
 }
+
 function customui_facility_node_form_submit(&$form, &$form_state)
 {
 
     $nid = empty($_GET['nid']) ? "" : $_GET['nid'];
     $form_state['redirect'] = array("facility",
         array(
-            'query'=>array(
-                'iframe'=>'1',
-                'nid'=>$nid
+            'query' => array(
+                'iframe' => '1',
+                'nid' => $nid
             )
         ));
 }
+
 function customui_photo_node_form_submit(&$form, &$form_state)
 {
 
     $nid = empty($_GET['nid']) ? "" : $_GET['nid'];
-    $form_state['redirect'] = array("gallery",
+    $form_state['redirect'] = array("photo-gallery",
         array(
-            'query'=>array(
-                'iframe'=>'1',
-                'nid'=>$nid
+            'query' => array(
+                'iframe' => '1',
+                'nid' => $nid
             )
         ));
 }
+
 function customui_photo_node_form_validate(&$form, &$form_state)
 {
     $nid = empty($_GET['nid']) ? "" : $_GET['nid'];
-    $form_state['values']['field_node']['und']['0']['target_id']=$nid;
+    $form_state['values']['field_node']['und']['0']['target_id'] = $nid;
 }
 
 function customui_facility_node_form_validate(&$form, &$form_state)
 {
     $nid = empty($_GET['nid']) ? "" : $_GET['nid'];
-    $form_state['values']['field_listing']['und']['0']['target_id']=$nid;
+    $form_state['values']['field_listing']['und']['0']['target_id'] = $nid;
 }
-function customui_form_alter(&$form, &$form_state, $form_id){
 
-    switch($form_id){
+function customui_form_alter(&$form, &$form_state, $form_id)
+{
+
+    switch ($form_id) {
         case "listing_node_form":
             $form['actions']['submit']['#submit'][] = 'customui_listing_node_form_submit';
             break;

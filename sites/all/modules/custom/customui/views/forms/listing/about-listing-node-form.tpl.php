@@ -7,13 +7,17 @@ $node = (object) array(
     'type' => 'listing',
     'language' => LANGUAGE_NONE,
 );
+
+$nid=empty($_GET['nid'])?"":$_GET['nid'];
+if($nid!=""){
+    $node=node_load($nid);
+}
 $form = drupal_get_form('listing' . '_node_form', $node);
-#$form["title"]['#access'] = 0;
-#$form["field_address"]['#access'] = 0;
-#$form["field_listing_location"]['#access'] = 0;
+$form["title"]['#access'] = 0;
+$form["field_listing_location"]['#access'] = 0;
+$form["field_address"]['#access'] = 0;
 $form["body"]['#access'] = 0;
 $form['actions']["preview"]['#access'] = 0;
-
 ?>
 <div class="row">
     <div class="col-md-2"></div>
@@ -22,4 +26,3 @@ $form['actions']["preview"]['#access'] = 0;
     </div>
     <div class="col-md-4"></div>
 </div>
-

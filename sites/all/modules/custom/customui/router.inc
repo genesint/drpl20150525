@@ -14,49 +14,39 @@ function router()
                 '#markup' => theme('welcome', array()),
             );
             break;
-        case 'listing-view-list':
+        case 'basic-listing-node-form':
             $page = array(
-                '#markup' => theme('listing-view-list', array()),
+                '#markup' => theme('basic-listing-node-form', array()),
             );
             break;
-        case 'listing-view-item':
+        case 'about-listing-node-form':
             $page = array(
-                '#markup' => theme('listing-view-item', array()),
+                '#markup' => theme('about-listing-node-form', array()),
             );
             break;
-        case 'listing-view-item-body':
+        case 'about-listing-view-item':
             $page = array(
-                '#markup' => theme('listing-view-item-body', array()),
+                '#markup' => theme('about-listing-view-item', array()),
             );
             break;
-        case 'listing-node-form-basic-info':
+        case 'basic-listing-view-item':
             $page = array(
-                '#markup' => theme('listing-node-form-basic-info', array()),
+                '#markup' => theme('basic-listing-view-item', array()),
             );
             break;
-        case 'listing-node-form-body':
+        case 'location-listing-view-item':
             $page = array(
-                '#markup' => theme('listing-node-form-body', array()),
+                '#markup' => theme('location-listing-view-item', array()),
             );
             break;
-        case 'about':
+        case 'listing-view':
             $page = array(
-                '#markup' => theme('about', array()),
+                '#markup' => theme('listing-view', array()),
             );
             break;
-        case 'about-info':
+        case 'owner-listing-list':
             $page = array(
-                '#markup' => theme('about-info', array()),
-            );
-            break;
-        case 'basic-info':
-            $page = array(
-                '#markup' => theme('basic-info', array()),
-            );
-            break;
-        case 'location':
-            $page = array(
-                '#markup' => theme('location', array()),
+                '#markup' => theme('owner-listing-list', array()),
             );
             break;
         case 'review':
@@ -69,9 +59,19 @@ function router()
                 '#markup' => theme('facility', array()),
             );
             break;
-        case 'gallery':
+        case 'photo-gallery':
             $page = array(
-                '#markup' => theme('gallery', array()),
+                '#markup' => theme('photo-gallery', array()),
+            );
+            break;
+        case 'visitor-account':
+            $page = array(
+                '#markup' => theme('visitor-account', array()),
+            );
+            break;
+        case 'video-gallery':
+            $page = array(
+                '#markup' => theme('video-gallery', array()),
             );
             break;
         case 'register':

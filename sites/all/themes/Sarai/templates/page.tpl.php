@@ -91,7 +91,12 @@ if ($iframe != 1) {
                     <a class="name navbar-brand" href="<?php print $front_page; ?>"
                        title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
                 <?php endif; ?>
-
+                <form class="navbar-form navbar-left" role="search" action="search-listing-list">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Where are you going?" name="tskey">
+                    </div>
+                    <button type="submit" class="btn btn-default">Search</button>
+                </form>
                 <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
